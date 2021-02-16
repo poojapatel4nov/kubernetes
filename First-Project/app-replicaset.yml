@@ -9,7 +9,7 @@ spec:
   selector: 
     matchLabels:
       app: myapp
-  tamplate:
+  template:
     metadata:
       name: Webserver
       labels:
