@@ -11,14 +11,14 @@ spec:
       app: myapp
   template:
     metadata:
-      name: Webserver
+      name: webserver
       labels:
-        name: Webserver
+        name: webserver
         app: myapp
         type: pod
 
     spec:
       containers:
-        - name: nginx-Container
+        - name: nginx-container
           image: nginx
   replicas: 3
