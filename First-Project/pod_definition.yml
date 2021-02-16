@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: myapp-pod
+  name: Webserver
   labels:
-    name: myapp-pod
+    name: Webserver
     app: myapp
     type: pod
 
 spec:
   containers:
-    - name: nginx-image
+    - name: nginx-Container
       image: nginx
