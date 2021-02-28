@@ -1,0 +1,33 @@
+Pod Commands
+
+#Create a nginx pod , it will pull docker image nginx from docker hub and create a pod.
+kubectl run nginx --image nginx
+
+#list out recently created pod
+kubectl get pods
+
+# -o wide parameter give details about IP of Pod and node on which is it running
+kubectl get pods -o wide
+
+#Describe pods command give us more details on pod, like on which node this pod is running, which image it is using and so on.
+
+kubectl describe pods 
+
+#list node in kubernetes cluster
+kubectl get nodes
+
+#Create a Pod using YAML file.
+Kubernets yaml file contains top level fields(apiVersion, kind, metadata and spec).
+
+1. apiVerions :-Version of kubernates api we are using, for pod it is V1, other apiVersion are 
+apps/v1 
+
+2. Kind:- Type of Object we are creating, if we create Pod then kind should be Pod, for replcaset 
+it should be ReplicaSet. other values are Service and Deployment.
+
+3. Metadata:- Data about the object, like Name, Lable etc.it is a type of Dictionary.
+
+spec:= this is specification for Pod or object we are creating, it is a type of dictioney and contain
+other field such as Containers(it is type of list/array).
+ 
+	  
