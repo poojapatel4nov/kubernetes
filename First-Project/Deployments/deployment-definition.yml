@@ -2,14 +2,14 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: myapp-replicaset
-    lables: 
+    labels: 
       app: myapp
       type: front-end
 spec:
   template:
     metadata:
       name: myapp-pod
-      lables: 
+      labels: 
         app: myapp
         type: front-end
     spec:
@@ -18,5 +18,5 @@ spec:
           image:  nginx
   replicas: 3
   selector:
-    matchLablels:
+    matchLabels:
       type: front-end
