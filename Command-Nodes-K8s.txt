@@ -32,6 +32,20 @@ other field such as Containers(it is type of list/array).
 
 #Create a pod definition file. and create pod using below command.
 
-kubectl create -f 
+kubectl create -f Pod-definition.yml
+kubectl get pods
+kubectl get pods -o wide   #show Ip and Node 
+kubectl describe pods
+
+Replication Set and Replication Controllor:=
+It ensure that minimum no of Pod running at any point of time,
+Selector is available in both replcaset and replication Controllor but in replication Controllor
+if we don't specify its value then relication Controllor lable which is defined in pod definition
+file.
+
+Create Replication Controllor definition fine and run with using below command.
+kubectl create -f rc-definition.yml
+kubectl get replicationcontollor
+
  
 	  
