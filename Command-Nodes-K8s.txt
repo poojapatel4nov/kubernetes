@@ -37,15 +37,64 @@ kubectl get pods
 kubectl get pods -o wide   #show Ip and Node 
 kubectl describe pods
 
-Replication Set and Replication Controllor:=
+Replication Set and Replication Controller:=
 It ensure that minimum no of Pod running at any point of time,
-Selector is available in both replcaset and replication Controllor but in replication Controllor
-if we don't specify its value then relication Controllor lable which is defined in pod definition
-file.
+Selector is available in both replcaset and replication Controller but in replication Controller
+if we don't specify its value then relication Controller use lable which is defined in pod definition
 
-Create Replication Controllor definition fine and run with using below command.
+
+Create Replication Controllor definition file and run with using below command.
+
 kubectl create -f rc-definition.yml
-kubectl get replicationcontollor
+kubectl get replicationcontroller
+kubectl get pods
+kubectl get pods -o wide
+
+kubectl delete replicationcontroller myapp-rc  
+
+Create ReplicaSet using replicaset-definition file and run below commands.
+kubectl create -f replicaset-definition.yml
+kubectl get replicaset
+kubectl delete replicaset myapp-replicaset
+
+#apply change of replicaset in already running replicaset, like increasing no of pod.
+kubectl replace -f replicaset-definition.yml   
+
+we can also scale replicaset using commond line without modifying file as below.
+kubectl scale --replicas=6 -f replicaset-definition.yml
+
+Delete on pod using below command, replicaset will create it again immidiatly.
+
+kubectl delete pod myapp-replicaset-45nhl
+kubectl get pods  
+
+Create a extra pod using same pod definition file(label should match), repication set will delete that pod immidiatly.
+increae no of replica in replicaset definition file, apply change using below command.
+
+kubectl replace -f replicaset-definition.yml 
+
+Scale down/up no of replica using below command without modifying files.
+
+kubectl scale --replicas=3 -f replicaset-definition.yml
+
+Create Deployment:- Deployment file has similer definition file as we have in replicaset 
+definition, only difference is that kind will be type of Deployment.
+
+Once file has been create use below command to create deployment.
+
+kubectl create -f deploymnet-definition.yml
+
+kubectl get deployment
+
+kubectl get replicaset
+
+kubectl get pods
+
+
+
+
+
+
 
  
 	  
