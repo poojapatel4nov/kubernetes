@@ -1,5 +1,4 @@
 apiVersion: v1
-kind: apiVersion: v1
 kind: Pod
 metadata:
   name: myapp-pod
@@ -9,6 +8,6 @@ metadata:
 
 spec:
   containers:
-  - name: myapp
-    image: nginx
+    - name: myapp
+      image: nginx
 
