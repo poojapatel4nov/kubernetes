@@ -10,4 +10,3 @@ spec:
   containers:
     - name: myapp
       image: nginx
-

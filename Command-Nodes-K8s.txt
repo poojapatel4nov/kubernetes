@@ -29,5 +29,9 @@ it should be ReplicaSet. other values are Service and Deployment.
 
 spec:= this is specification for Pod or object we are creating, it is a type of dictioney and contain
 other field such as Containers(it is type of list/array).
+
+#Create a pod definition file. and create pod using below command.
+
+kubectl create -f 
  
 	  
