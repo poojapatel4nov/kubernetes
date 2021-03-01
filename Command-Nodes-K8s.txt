@@ -1,49 +1,49 @@
-Pod Commands
-
+1. Pod Commands
 #Create a nginx pod , it will pull docker image nginx from docker hub and create a pod.
+
 kubectl run nginx --image nginx
 
-#list out recently created pod
+2. list out recently created pod
+
 kubectl get pods
 
-# -o wide parameter give details about IP of Pod and node on which is it running
+3. -o wide parameter give details about IP of Pod and node on which is it running
+
 kubectl get pods -o wide
 
-#Describe pods command give us more details on pod, like on which node this pod is running, which image it is using and so on.
+4. Describe pods command give us more details on pod, like on which node this pod is running, which image it is using and so on.
 
 kubectl describe pods 
 
-#list node in kubernetes cluster
+5. list node in kubernetes cluster
+
 kubectl get nodes
 
-#Create a Pod using YAML file.
-Kubernets yaml file contains top level fields(apiVersion, kind, metadata and spec).
+6. Create a Pod using YAML file, Kubernets yaml file contains top level fields(apiVersion, kind, metadata and spec).
 
-1. apiVerions :-Version of kubernates api we are using, for pod it is V1, other apiVersion are 
-apps/v1 
+	1. apiVerions :-Version of kubernates api we are using, for pod it is V1, other apiVersion are 
+		apps/v1 
 
-2. Kind:- Type of Object we are creating, if we create Pod then kind should be Pod, for replcaset 
-it should be ReplicaSet. other values are Service and Deployment.
+	2. Kind:- Type of Object we are creating, if we create Pod then kind should be Pod, for replcaset 
+		it should be ReplicaSet. other values are Service and Deployment.
 
-3. Metadata:- Data about the object, like Name, Lable etc.it is a type of Dictionary.
+	3. Metadata:- Data about the object, like Name, Lable etc.it is a type of Dictionary.
 
-spec:= this is specification for Pod or object we are creating, it is a type of dictioney and contain
-other field such as Containers(it is type of list/array).
+	4. spec:- this is specification for Pod or object we are creating, it is a type of dictioney and contain
+		other field such as Containers(it is type of list/array).
 
-#Create a pod definition file. and create pod using below command.
+7. Create a pod definition file. and create pod using below command.
 
 kubectl create -f Pod-definition.yml
 kubectl get pods
 kubectl get pods -o wide   #show Ip and Node 
 kubectl describe pods
 
-Replication Set and Replication Controller:=
-It ensure that minimum no of Pod running at any point of time,
-Selector is available in both replcaset and replication Controller but in replication Controller
-if we don't specify its value then relication Controller use lable which is defined in pod definition
-
-
-Create Replication Controllor definition file and run with using below command.
+8. Replication Set and Replication Controller:=
+	It ensure that minimum no of Pod running at any point of time,
+	Selector is available in both replcaset and replication Controller but in replication Controller
+	if we don't specify its value then relication Controller use lable which is defined in pod definition
+	Create Replication Controllor definition file and run with using below command.
 
 kubectl create -f rc-definition.yml
 kubectl get replicationcontroller
@@ -52,44 +52,41 @@ kubectl get pods -o wide
 
 kubectl delete replicationcontroller myapp-rc  
 
-Create ReplicaSet using replicaset-definition file and run below commands.
+9. Create ReplicaSet using replicaset-definition file and run below commands.
+
 kubectl create -f replicaset-definition.yml
 kubectl get replicaset
 kubectl delete replicaset myapp-replicaset
 
-#apply change of replicaset in already running replicaset, like increasing no of pod.
+10. apply change of replicaset in already running replicaset, like increasing no of pod.
+
 kubectl replace -f replicaset-definition.yml   
 
-we can also scale replicaset using commond line without modifying file as below.
+11. we can also scale replicaset using commond line without modifying file as below.
+
 kubectl scale --replicas=6 -f replicaset-definition.yml
 
-Delete on pod using below command, replicaset will create it again immidiatly.
+12. Delete on pod using below command, replicaset will create it again immidiatly.
 
 kubectl delete pod myapp-replicaset-45nhl
 kubectl get pods  
 
-Create a extra pod using same pod definition file(label should match), repication set will delete that pod immidiatly.
-increae no of replica in replicaset definition file, apply change using below command.
+13. Create a extra pod using same pod definition file(label should match), repication set will delete that pod immidiatly.
+	increae no of replica in replicaset definition file, apply change using below command.
 
 kubectl replace -f replicaset-definition.yml 
 
-Scale down/up no of replica using below command without modifying files.
+14. Scale down/up no of replica using below command without modifying files.
 
 kubectl scale --replicas=3 -f replicaset-definition.yml
 
-Create Deployment:- Deployment file has similer definition file as we have in replicaset 
-definition, only difference is that kind will be type of Deployment.
-
-Once file has been create use below command to create deployment.
+15. Create Deployment:- Deployment file has similer definition file as we have in replicaset 
+	definition, only difference is that kind will be type of Deployment.Once file has been create use below command to create deployment.
 
 kubectl create -f deploymnet-definition.yml
-
 kubectl get deployment
-
 kubectl get replicaset
-
 kubectl get pods
-
 kubectl describe deployment
 
 or run 
@@ -97,24 +94,55 @@ or run
 kubectl get all   (it will show all running depoyment , replicaset and pods)
 
 
-Update and rollback 
+16. Update and rollback 
 
-Two type of deployment stratagies 
-Recreate  :- Stop all pod in replicaset and create new with updated version. application will 
-be down for sometime in this case.
-Rolling update  : this is also a default stratagy, in this a parallar replicaset created and
-one pod bring down from old replicaset and new pod is created in new replicaset.
-update deployment file i.e. image version (image:  nginx:1.17.10) and run below command to 
-apply changes.
+	Two type of deployment stratagies 
+		Recreate  :- Stop all pod in replicaset and create new with updated version. application will be down for sometime in this case.
+		Rolling update  : this is also a default stratagy, in this a parallar replicaset created and one pod bring down from old replicaset and new pod is created in new replicaset, update deployment file i.e. image version (image:  nginx:1.17.10) and run below command to apply changes.
 
 kubectl apply -f deployment-definition.yml
 
+kubectl rollout status deployment.apps/myapp-deployment        (Check status of rollout using below command)
+	
+kubectl rollout history deployment.apps/myapp-deployment        (To See history of rollout and revision run below command)
+
 kubectl get replicaset   (you will see two replicasets)
 
-We can also update deployment using below set image command, in this case deployment definition 
-file will contain different image name.
+17 . We can also update deployment using below set image command, in this case deployment definition file will contain different image name.
 
-kubectl 
+kubectl set image deployment.apps/myapp-deployment webserver=nginx:1:18.0      (webserver is container name defined in deployment file).
+
+18. In Case of any issue we can rollback the deployment to its previous state using below command.
+
+kubectl rollout undo deployment.apps/myapp-deployment
+
+19. To delete deployment run below command.
+
+kubectl delete deployment myapp-deployment
+
+20. To enable revision history, we need to enable --record flag during deployment.
+
+kubectl create -f deployment-definition.yml --record
+
+21. Check rollout history.
+
+kubectl rollout history deployment.apps/myapp-deployment
+
+22. Networking in kubenetes
+
+Node is machine/vm where we are running pod. ip of this machine is identified as Nodeip. you can check ip address of node.
+
+kubectl get node -o wide
+
+Pod is also assigned one IP address on individual pods, you can see assigned IP using -o wide commond as below.
+
+kubectl get pods -o wide
+
+All pods/container can communicate with each other without NAT address. each node in cluster can communicate with pod/container without NAT ip.
+
+
+
+
 
 
 
