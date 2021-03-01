@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: Webserver
-          image:  nginx:1.17.10
+          image:  nginx
   replicas: 3
   selector:
     matchLabels:
