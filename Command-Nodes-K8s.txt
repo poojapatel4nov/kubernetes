@@ -90,6 +90,33 @@ kubectl get replicaset
 
 kubectl get pods
 
+kubectl describe deployment
+
+or run 
+
+kubectl get all   (it will show all running depoyment , replicaset and pods)
+
+
+Update and rollback 
+
+Two type of deployment stratagies 
+Recreate  :- Stop all pod in replicaset and create new with updated version. application will 
+be down for sometime in this case.
+Rolling update  : this is also a default stratagy, in this a parallar replicaset created and
+one pod bring down from old replicaset and new pod is created in new replicaset.
+update deployment file i.e. image version (image:  nginx:1.17.10) and run below command to 
+apply changes.
+
+kubectl apply -f deployment-definition.yml
+
+kubectl get replicaset   (you will see two replicasets)
+
+We can also update deployment using below set image command, in this case deployment definition 
+file will contain different image name.
+
+kubectl 
+
+
 
 
 
