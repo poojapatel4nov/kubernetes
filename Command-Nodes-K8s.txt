@@ -141,6 +141,19 @@ kubectl get pods -o wide
 All pods/container can communicate with each other without NAT address. each node in cluster can communicate with pod/container without NAT ip.
 
 
+Services:- there type of service in kubernetes.
+1. NodePort Service:- This service Map Pod Port to Node's port so that we can access application running in container using node IP and port on which pod port is mapped. three type of ports are used.
+	a. targetPort(Port exposed by Pod, for example our webserver expose port 80).
+	b. Service Port or Port( this is the port on which Pod port is mapped, webserver port 80 will be mapped on service port 80 or 8080). service also has its own ip, which is called cluster Ip of the service.
+	c. NodePort:- Port which is used to access application externally, (for example serivice port for webserver 80 will me mapped on port 30008) , NodePort has range from 30000-32767.
+	
+
+2. Cluster IP:- Cluster IP helps different pods to communicate with each other in k8s cluster. 
+
+Loadbalancer:- it is used to distribute load on different pods. for example webserver.
+  
+
+
 
 
 
