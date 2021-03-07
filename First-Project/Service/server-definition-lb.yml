@@ -4,8 +4,9 @@ metadata:
   name: myapp-service-lb
 spec:
   selector:
-    app: myapp
+    name: myapp
+    type: front-end
   ports:
-    - port: 30008
+    - port: 80
       targetPort: 80
   type: LoadBalancer
