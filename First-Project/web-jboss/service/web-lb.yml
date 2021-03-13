@@ -4,10 +4,10 @@ metadata:
   name: jboss7-service-lb
 spec:
   selector:
-      app: myapp-jboss
-      type: back-end
+      app: myapp-web
+      type: front-end
   ports:
-    - port: 8080
-      targetPort: 8080
+    - port: 80
+      targetPort: 80
       
   type: LoadBalancer
