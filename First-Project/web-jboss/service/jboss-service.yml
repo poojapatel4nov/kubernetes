@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jboss7-service-cluster
+  labels:
+    name: myapp-jboss-service
+    app: myapp-jboss
+spec:
+  selector:
+      app: myapp-jboss
+      type: back-end
+  ports:
+    - port: 8080
+      targetPort: 8080
