@@ -18,6 +18,7 @@ spec:
           image: dineshpatel14/webserver
           ports:
             - containerPort: 80
+            - containerPort: 7200
           resources:
             limits:
               memory: "512Mi"
