@@ -10,7 +10,7 @@ spec:
     metadata:
       name: myapp-pod
       labels: 
-        app: myapp-jboss
+        app: myapp
         type: back-end
     spec:
       containers:
@@ -22,8 +22,8 @@ spec:
             limits:
               memory: "512Mi"
               cpu: "500m"
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: myapp-jboss
+      app: myapp
       type: back-end

@@ -4,10 +4,10 @@ metadata:
   name: jboss7-service-cluster
   labels:
     name: myapp-jboss-service
-    app: myapp-jboss
+    app: myapp
 spec:
   selector:
-      app: myapp-jboss
+      app: myapp
       type: back-end
   ports:
     - port: 8080

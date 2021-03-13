@@ -4,7 +4,7 @@ metadata:
   name: jboss7-service-lb
 spec:
   selector:
-      app: myapp-web
+      app: myapp
       type: front-end
   ports:
     - port: 80
