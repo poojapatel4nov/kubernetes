@@ -10,17 +10,20 @@ spec:
     metadata:
       name: myapp-pod
       labels: 
-        app: myapp
+        app: myapp-jboss
         type: back-end
     spec:
       containers:
         - name: jboss7
           image: dineshpatel14/jboss7
+          ports:
+            - containerPort: 8080
           resources:
             limits:
               memory: "512Mi"
               cpu: "500m"
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
+      app: myapp-jboss
       type: back-end

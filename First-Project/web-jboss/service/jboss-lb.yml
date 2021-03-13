@@ -4,8 +4,8 @@ metadata:
   name: jboss7-service-lb
 spec:
   selector:
-    name: myapp
-    type: back-end
+      app: myapp-jboss
+      type: back-end
   ports:
     - port: 8080
       targetPort: 8080
