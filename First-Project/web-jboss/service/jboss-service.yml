@@ -10,5 +10,9 @@ spec:
       app: myapp
       type: back-end
   ports:
-    - port: 8080
+    - name: http
+      port: 8080
       targetPort: 8080
+    - name: ajp
+      port: 8009
+      targetPort: 8009
