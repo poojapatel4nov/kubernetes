@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: jboss7-service-cluster
+  name: jboss
   labels:
-    name: myapp-jboss-service
-    app: myapp
+    name: myapp-service-jboss
+    app: test-application
 spec:
   selector:
-      app: myapp
-      type: back-end
+      app: test-application
+      name: jboss-pod
   ports:
     - name: http
       port: 8080

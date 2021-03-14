@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: webserver
   labels:
-    name: myapp-jboss-service
-    app: myapp
+    name: webserver-service
+    app: test-application
 spec:
   selector:
-      app: myapp
-      type: front-end
+      app: test-application
+      type: webserver-pod
   ports:
     - port: 7200
       targetPort: 7200

@@ -4,8 +4,8 @@ metadata:
   name: webserver-service-lb
 spec:
   selector:
-      app: myapp
-      type: front-end
+      app: test-application
+      name: webserver-pod
   ports:
     - port: 80
       targetPort: 80
