@@ -1,0 +1,670 @@
+pooja@Azure:~$ az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+pooja@Azure:~$ az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+The behavior of this command has been altered by the following extension: aks-preview
+Merged "kubecluster01" as current context in /home/pooja/.kube/config
+pooja@Azure:~$ kubectl get pods
+NAME                                      READY   STATUS    RESTARTS   AGE
+myapp-deployment-jboss-675f8f6486-2l8ph   1/1     Running   0          61m
+myapp-deployment-jboss-675f8f6486-5msmh   1/1     Running   0          61m
+myapp-deployment-web-6bfdf585b4-dwsxb     1/1     Running   0          56m
+myapp-deployment-web-6bfdf585b4-vbfv5     1/1     Running   0          56m
+pooja@Azure:~$ history
+    1  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+    2  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+    3  git pull
+    4  mkdir project
+    5  cd project/
+    6  git clone https://github.com/poojapatel4nov/kubernetes.git
+    8  cd kubernetes/
+   10  cd First-Project/
+   12  git pull
+   13  ls -ltra
+   14  cd Service/
+   15  ls -ltra
+   16  cd ..
+   18  cd Deployments/
+   19  ls -ltra
+   20  kubectl create -f deployment-definition.yml
+   21  git pull
+   22  ls -ltra
+   23  kubectl create -f deployment-definition.yml
+   24  kubectl get all
+   26  cd ..
+   27  cd Service/
+   28  ls -ltra
+   29  kubectl create -f service-definition.yml
+   30  git pull
+   31  kubectl create -f service-definition.yml
+   32  kubectl get all
+   33  curl localhost:30008
+   34  ipconfig
+   35  ifconfig
+   36  curl 10.244.181.180:30008
+   37  netstat -nap
+   38  kubectl get all
+   39  curl 10.0.172.174:30008
+   40  kubectl get myapp-service --watch
+   41  kubectl get service myapp-service --watch
+   42  az network public-ip show --resource-group Kube_cluster --name kubecluster01 --query ipAddress --output tsv
+   43  az network public-ip show --resource-group kube_cluster --name kubecluster01 --query ipAddress --output tsv
+   44  az network public-ip show --resource-group Kube_cluster --name myAKSPublicIP --query ipAddress --output tsv
+   45  az aks stop --name --resource-group Kube_cluster --name kubecluster01
+   46  az aks stop --name --resource-group Kube_cluster
+   47  az aks stop --name kubecluster01 --resource-group Kube_cluster
+   48  exit
+   49  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+   50  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+   51  az aks start --name kubecluster01 --resource-group Kube_cluster
+   52  kubectl get nodes
+   53  kubectl get pods
+   54  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+   55  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+   56  kubectl get pods
+   57  kubectl get nodes
+   58  kubectl get service myapp-service --watch
+   59  kubectl delete deployment myapp-deployment
+   60  kubectl get deployment myapp-deployment
+   61  kubectl get deployments
+   62  kubectl get pods
+   63  cd ..
+   64  ls -ltra
+   65  cd pooja/
+   66  ls -ltra
+   67  cd project/
+   68  ls s-ltra
+   69  ls -ltra
+   70  cd kubernetes/
+   71  ls
+   72  cd First-Project/
+   73  ls -ltra
+   74  cd Pods/
+   75  ls
+   76  l s-ltr
+   77  kubectl create -f Pod-definition.yml
+   78  kubectl get pods
+   79  cd ..
+   80  cd Service/
+   81  ls s-ltra
+   82  ls -ltra
+   83  kubectl create -f service-definition.yml
+   84  kubectl delete service myapp-service
+   85  kubectl get service myapp-service
+   86  kubectl create -f service-definition.yml
+   87  kubectl get all
+   88  kubectl get pod -o wide
+   89  kubectl get service myapp-service --watch
+   90  ls -ltra
+   91  vim service-definition.yml
+   92  ls -ltra
+   97  cd Service/
+   98  ls -ltra
+   99  kubectl get node -o wide
+  100  curl 10.240.0.4:30008
+  101  ssh 10.240.0.4
+  102  kubectl get nodes -o wide
+  103  kubectl get nodes
+  104  kubectl get node
+  105  ls -ltra
+  106  kubectl get nodes
+  107  kubectl get pods
+  108  kubectl delete pod myapp-pod
+  109  kubectl delete service myapp-service
+  110  az aks stop --name kubecluster01 --resource-group Kube_cluster
+  111  kubectl get nodes
+  112  kubectl get pods
+  113  az aks start --name kubecluster01 --resource-group Kube_cluster
+  114  az extension add --name aks-preview
+  115  az extension update --name aks-preview
+  116  az feature register --namespace "Microsoft.ContainerService" --name "StartStopPreview"
+  117  az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/StartStopPreview')].{Name:name,State:properties.state}"
+  118  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  119  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  120  kubectl get nodes
+  121  cd project/
+  122  ls -ltra
+  123  cd kubernetes/
+  124  ls -ltra
+  125  git pull
+  126  ls -ltra
+  127  cd First-Project/
+  128  ls -ltra
+  129  cd Service/
+  130  ls -ltra
+  131  git pull
+  132  vim service-definition.yml
+  133  rm -f service-definition.yml
+  134  git pull
+  135  ls -ltra
+  137  cd ..
+  138  cd Pods/
+  139  ls -ltra
+  140  kubectl create -f Pod-definition.yml
+  141  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  142  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  143  ls s-ltra
+  144  kubectl get pods
+  145  cd project/kubernetes/First-Project/
+  146  ls -ltra
+  147  cd Service/
+  148  ls -ltra
+  149  car server-definition-lb.yml
+  150  cat server-definition-lb.yml
+  151  git pull
+  152  ls -ltra
+  153  kubectl create -f server-definition-lb.yml
+  154  kubectl get service
+  155  kubectl get service --watch
+  156  az extension add --name aks-preview
+  157  az extension update --name aks-preview
+  158  az feature register --namespace "Microsoft.ContainerService" --name "StartStopPreview"
+  159  kubectl get namespace
+  160  az feature register --namespace "default" --name "StartStopPreview"
+  161  az feature register --namespace "Microsoft.ContainerService" --name "StartStopPreview"
+  162  az provider register --namespace Microsoft.ContainerService
+  163  az aks stop --name myAKSCluster --resource-group myResourceGroup
+  164  az aks stop --name kubecluster01 --resource-group Kube_cluster
+  165  kubectl get pod
+  166  kubectl get namespace
+  167  exit
+  168  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  169  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  170  ls -ltra
+  171  cd project/
+  172  ls -ltra
+  173  cd kubernetes/
+  174  ls -ltra
+  175  mkdir web-jboss
+  176  cd web-jboss
+  177  ls -ltra
+  178  cd ..
+  179  ls -ltra
+  180  rm -rf web-jboss
+  181  git pull
+  182  ls -ltra
+  183  cd First-Project/
+  184  ls -ltra
+  185  cd web-jboss/
+  186  ls -ltra
+  187  cd deployment/
+  188  ls -ltra
+  189  history
+  190  kubectl create -f jboss-deployment.yml
+  191  kubectl get all
+  192  kubectl describe deployment.apps/myapp-deployment
+  193  kubectl get pod
+  194  kubectl get pod -o wide
+  195  kubectl describe myapp-deployment-5b7cfb99b9-89c82
+  196  kubectl describe pod myapp-deployment-5b7cfb99b9-89c82
+  197  git pull
+  198  ls -ltra
+  199  cd ..
+  200  cd service/
+  201  ls -ltra
+  202  kubectl create -f jboss-lb.yml
+  203  kubectl get service
+  204  culr 40.80.87.237:30086
+  205  curl 40.80.87.237:30086
+  206  kubectl get pods
+  207  kubectl get deployment
+  208  kubectl delete deployment myapp-deployment
+  209  kubectl get deployment
+  210  kubectl get service
+  211  cd ..
+  212  cd deployment/
+  213  kubectl create -f jboss-deployment.yml
+  214  kubectl describe deployment.apps/myapp-deployment
+  215  kubectl get pods
+  216  kubectl get pods -o wide
+  217  kubectl describe pod myapp-deployment-5b7cfb99b9-9ssw6
+  218  kubectl get pod myapp-deployment-5b7cfb99b9-9ssw6 --template='{{(index (index .spec.containers 0).ports 0).containerPort}}{{"\n"}}'
+  219  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  220  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  221  cd project/
+  222  cd kubernetes/
+  223  ls
+  224  cd First-Project/
+  225  ls
+  226  cd web-jboss/
+  227  ls -ltra
+  228  cd deployment/
+  229  kubectl get deployment
+  230  kubectl delete deployment myapp-deployment
+  231  kubectl get deployment
+  232  kubectl create -f jboss-deployment.yml
+  233  kubectl get deployment
+  234  kubectl get pods
+  235  kubectl describe pods myapp-deployment-5b7cfb99b9-g8g45
+  236  kubectl describe service
+  237  cd ..
+  238  cd service/
+  239  ls -ltra
+  240  vim jboss-lb.yml
+  241  kubectl get pods
+  242  kubectl describe pod myapp-deployment-5b7cfb99b9-g8g45
+  243  cd ..
+  244  cd deployment/
+  245  ls s-ltra
+  246  ls -ltra
+  247  kubectl delete deployment myapp-deployment
+  248  ls
+  249  vim jboss-deployment.yml
+  250  kubectl create -f jboss-deployment.yml
+  251  vim jboss-deployment.yml
+  252  kubectl create -f jboss-deployment.yml
+  253  vim jboss-deployment.yml
+  254  kubectl create -f jboss-deployment.yml
+  255  kubectl get pods
+  256  kubectl describe pod sdoxsee/jboss-eap
+  257  kubectl describe pod myapp-deployment-748d9bccfd-5z2qw
+  258  kubectl get pods
+  259  curl 10.244.1.9:8080
+  260  cd ..
+  261  cd pods
+  262  ls
+  263  cd Pods/
+  264  ls -ltra
+  265  kubectl create -f Pod-definition.yml
+  266  kubectl get pod
+  267  kubectl describe pod myapp-pod
+  268  kubectl delete pod myapp-pod
+  269  kubectl describe service
+  270  cd ..
+  271  ls -ltra
+  272  cd Deployments/
+  273  ls -ltra
+  274  kubectl create -f deployment-definition.yml
+  275  kubectl delete deployment myapp-deployment
+  276  kubectl create -f deployment-definition.yml
+  277  cd ..
+  278  cd Service/
+  279  ls -ltra
+  280  kubectl create -f server-definition-lb.yml
+  281  kubectl get service
+  282  kubectl delete service myapp-service-lb
+  283  kubectl get deployment
+  284  kubectl delete deployment myapp-deployment
+  285  cd ..
+  286  cd web-jboss/
+  287  cd deployment/
+  288  ls -ltra
+  289  vim jboss-deployment.yml
+  290  kubectl create -f jboss-deployment.yml
+  291  vim jboss-deployment.yml
+  292  kubectl create -f jboss-deployment.yml
+  293  kubectl describe pods
+  294  cd ..
+  295  cd service/
+  296  ls -ltra
+  297  kubectl create -f jboss-lb.yml
+  298  kubectl get service
+  299  cd ..
+  300  ls -ltra
+  301  mkdir pods
+  302  vim jboss-pod.yml
+  303  kubectl get deployment
+  304  kubectl delete myapp-deployment
+  305  kubectl delete deployment myapp-deployment
+  306  cd pods/
+  307  ls
+  308  cd ..
+  309  ls -ltra
+  310  mv jboss-pod.yml pods/
+  311  cd pods/
+  312  ls s-ltra
+  313  ls -ltra
+  314  kubectl create -f jboss-pod.yml
+  315  kubectl get pods
+  316  kubectl describe pods
+  317  vim jboss-pod.yml
+  318  cd ..
+  319  cd service/
+  320  ls -ltra
+  321  kubectl create -f jboss-lb.yml
+  322  kubectl log myapp-pod
+  323  kubectl logs myapp-pod
+  324  kubectl get service
+  325  curl 40.80.87.237:30086
+  326  kubectl delete service jboss7-service-lb
+  327  kubectl create -f jboss-lb.yml
+  328  kubectl get services
+  329  kubectl get pods
+  330  kubectl delete pods myapp-pod
+  331  cd ..
+  332  cd deployment/
+  333  ls -ltra
+  334  kubectl create -f jboss-deployment.yml
+  335  kubectl get deployment
+  336  kubectl get pods
+  337  kubectl describe pods myapp-deployment-8f6c654ff-5zcbr
+  338  vim jboss-deployment.yml
+  339  kubectl delete deployment myapp-deployment
+  340  kubectl create -f jboss-deployment.yml
+  341  kubectl get pods
+  342  kubectl get service
+  343  kubectl delete service jboss7-service-lb
+  344  cd ../service/
+  345  kubectl create -f jboss-lb.yml
+  346  kubectl get service
+  347  cd ..
+  348  ls -ltra
+  349  cd deployment/
+  350  ls -ltra
+  351  vim jboss-deployment.yml
+  352  clear
+  353  kubectl get service
+  354  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  355  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  356  kubectl get service
+  357  kubectl get deployment
+  358  kubectl get pods
+  359  kubectl describe pod myapp-deployment-6c8cf98b96-sztwv
+  360  kubectl get deployment
+  361  kubectl get service
+  362  kubectl delete deployment myapp-deployment
+  363  cd project/kubernetes/First-Project/web-jboss/deployment/
+  364  ls
+  365  vim jboss-deployment.yml
+  366  kubectl create -f jboss-deployment.yml
+  367  kubectl get service
+  368  kubectl describe service
+  369  ls -ltra
+  370  vim jboss-deployment.yml
+  371  kubectl get deployment
+  372  kubectl delete deployment myapp-deployment
+  373  kubectl create -f jboss-deployment.yml
+  374  kubectl get service
+  375  kubectl delete service jboss7-service-lb
+  376  cd ..
+  377  cd service/
+  378  ls -ltra
+  379  vom jboss-lb.yml
+  380  vim jboss-lb.yml
+  381  kubectl create -f jboss-lb.yml
+  382  kubectl get service
+  383  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  384  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  385  cd project/kubernetes/
+  386  ls s-ltra
+  387  ls -lra
+  388  cd First-Project/
+  389  ls -ltra
+  390  cd web-jboss/
+  391  ls -ltra
+  392  cd deployment/
+  393  vim jboss-deployment.yml
+  394  cd ..
+  395  cd service/
+  396  ls -lra
+  397  vim jboss-lb.yml
+  398  kubectl get deployment
+  399  kubectl get service
+  400  kubectl delete service jboss7-service-lb
+  401  kubectl create -f jboss-lb.yml
+  402  kubectl get service
+  403  kubectl get deployment
+  404  kubectl describe deployment myapp-deployment
+  405  ls  -ltra
+  406  vim jboss-lb.yml
+  407  cd ..
+  408  cd deployment/
+  409  ls -ltra
+  410  vim jboss-deployment.yml
+  411  kubectl get deployment
+  412  kubectl delete deployment myapp-deployment
+  413  kubectl get service
+  414  kubectl delete service jboss7-service-lb
+  415  kubectl create -f jboss-deployment.yml
+  416  cd ../service/
+  417  kubectl create -f jboss-lb.yml
+  418  kubectl get all
+  419  kubectl delete service/jboss7-service-lb
+  420  kubectl delete deployment.apps/myapp-deployment
+  421  ls -ltra
+  422  vim jboss-lb.yml
+  423  kubectl create -f jboss-lb.yml
+  424  cd ../deployment/
+  425  ls -ltra
+  426  vim jboss-deployment.yml
+  427  kubectl create -f jboss-deployment.yml
+  428  vim jboss-deployment.yml
+  429  kubectl create -f jboss-deployment.yml
+  430  kubectl get service
+  431  cd ..
+  432  git add .
+  433  git commit -m "Üpdated deployment and service"
+  434  git push .
+  435  git commit -m "Update deployment and service"
+  436  git config --global user.email "poojapatel4nov@gmail.com"
+  437  git config --global user.name "pooja patel"
+  438  git commit -m "Update deployment and service"
+  439  git push .
+  440  git push
+  441  git pull
+  442  ls -ltra
+  443  cd deployment/
+  444  ls -ltra
+  445  kubectl create -f webserver-deployment.yml
+  446  git pull
+  447  kubectl create -f webserver-deployment.yml
+  448  kubectl get service
+  449  kubectl delete service webserver-deployment.yml
+  450  kubectl delete service jboss7-service-lb
+  451  cd ..
+  452  cd service/
+  453  ls -ltra
+  454  kubectl create -f web-lb.yml
+  455  kubectl get service
+  456  kubectl get deployment
+  457  git pull
+  458  ls -ltra
+  459  cd ..
+  460  git pull
+  461  kubectl get all
+  462  kubectl delete service/jboss7-service-lb
+  463  kubectl delete deployment.apps/myapp-deployment
+  464  kubectl delete deployment.apps/myapp-deployment-web
+  465  cd deployment/
+  466  ls -ltra
+  467  kubectl create -f .
+  468  cd ..
+  469  cd service/
+  470  ls -ltra
+  471  kubectl create -f .
+  472  kubectl get all
+  473  ls -ltra
+  474  vim web-lb.yml
+  475  git pull
+  476  kubectl delete deployment.apps/myapp-deployment-web
+  477  cd ..
+  478  cd deployment/
+  479  ls -ltra
+  480  kubectl create -f webserver-deployment.yml
+  481  kubectl get all -0 wide
+  482  kubectl get all -o wide
+  483  git pull
+  484  ls -ltra
+  485  vim jboss-deployment.yml
+  486  kubectl delete deployment.apps/myapp-deployment
+  487  kubectl create -f jboss-deployment.yml
+  488  git pull
+  489  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  490  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  491  cd project/
+  492  ls -ltra
+  493  cd kubernetes/
+  494  ls s-ltra
+  495  ls -ltra
+  496  cd First-Project/
+  497  ls -ltra
+  498  cd web-jboss/
+  499  ls -ltra
+  500  cd deployment/
+  501  ls -ltra
+  502  kubectl create -f .
+  503  vim webserver-deployment.yml
+  504  cd ..
+  505  cd service/
+  506  ls -ltra
+  507  git pull
+  508  ls -ltra
+  509  kubectl create -f .
+  510  kubectl get all
+  511  kubectl get pods
+  512  kubectl get deployment
+  513  kubectl delete deployment myapp-deployment
+  514  git pull
+  515  ls -ltra
+  516  cd ..
+  517  cd deployment/
+  518  ls -l
+  519  kubectl create -f jboss-deployment.yml
+  520  kubectl get all
+  521  kubectl describe service/jboss7-service-cluster
+  522  kubectl describe deployment.apps/myapp-deployment
+  523  kubectl delete service/jboss7-service-cluster
+  524  cd ..
+  525  ls -ltra
+  526  cd service/
+  527  ls -ltra
+  528  vim jboss-service.yml
+  529  kubectl create -f jboss-service.yml
+  530  kubectl delete service/jboss7-service-cluster
+  531  kubectl create -f jboss-service.yml
+  532  kubectl describe service/jboss7-service-cluster
+  533  git pull
+  534  kubectl get service
+  535  kubectl delete service webserver
+  536  ls -ltra
+  537  catt mod-cluster-service.yml
+  538  cat mod-cluster-service.yml
+  539  kubectl create -f mod-cluster-service.yml
+  540  kubectl get service
+  541  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  542  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  543  cd project/
+  544  cd kubernetes/
+  545  git pull
+  546  kubectl get all
+  547  kubectl delete az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  548  kubectl delete service/jboss7-service-cluster
+  549  kubectl delete service/webserver
+  550  kubectl delete service/webserver-service-lb
+  551  kubectl delete deployment.apps/myapp-deployment
+  552  kubectl delete deployment.apps/myapp-deployment-web
+  553  kubectl get all
+  554  cd First-Project/web-jboss/
+  555  ls -ltra
+  556  cd deployment/
+  557  ls -ltra
+  558  kubectl create -f .
+  559  cd ..
+  560  cd service/
+  561  kubectl create -f .
+  562  kubectl get all
+  563  kubectl logs pod/myapp-deployment-jboss-557476f79-4sm6x
+  564  kubectl get all
+  565  kubectl logs pod/myapp-deployment-web-6bfdf585b4-478zm
+  566  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  567  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  568  kubectl get all
+  569  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  570  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  571  kubectl get all
+  572  kubectl exec --stdin --tty pod/myapp-deployment-jboss-557476f79-4sm6x -- /bin/bash
+  573  kubectl get all
+  574  kubectl delete deployment.apps/myapp-deployment-jboss
+  575  cd project/kubernetes/First-Project/web-jboss/deployment/
+  576  kubectl create -f jboss-deployment.yml
+  577  kubectl get all
+  578  kubectl exec --stdin --tty pod/myapp-deployment-jboss-557476f79-5xqvj -- /bin/bash
+  579  kubectl get all
+  580  kubectl delete deployment.apps/myapp-deployment-jboss
+  581  kubectl create -f jboss-deployment.yml
+  582  kubectl get all
+  583  kubectl exec --stdin --tty pod/myapp-deployment-jboss-557476f79-zzgpd -- /bin/bash
+  584  kubectl get pods -o wide
+  585  kubectl exec --stdin --tty myapp-deployment-web-6bfdf585b4-478zm -- /bin/bash
+  586  kubectl get deployment
+  587  kubectl delete deployment myapp-deployment-jboss
+  588  kubectl create -f jboss-deployment.yml
+  589  kubectl get pods -o wide
+  590  kubectl exec --stdin --tty myapp-deployment-jboss-557476f79-jpn2w -- /bin/bash
+  591  kubectl get deployment
+  592  kubectl delete deployment myapp-deployment-jboss
+  593  kubectl create -f jboss-deployment.yml
+  594  kubectl get service
+  595  cd ..
+  596  ls -ltra
+  597  cd service/
+  598  ls -ltra
+  599  vim mod-cluster-service.yml
+  600  kubectl get service
+  601  kubectl delete service webserver
+  602  git pull
+  603  kubectl create -f mod-cluster-service.yml
+  604  kubectl get pods
+  605  kubectl logs myapp-deployment-jboss-557476f79-kjd7q
+  606  kubectl get pods
+  607  kubectl delete pod myapp-deployment-jboss-557476f79-kjd7q
+  608  kubectl get pods
+  609  kubectl logs myapp-deployment-jboss-557476f79-l9mns
+  610  kubectl describe service webserver
+  611  kubectl get service -o wide
+  612  kubectl get all
+  613  kubectl delete deployment.apps/myapp-deployment-jboss
+  614  cd ../deployment/
+  615  kubectl create -f jboss-deployment.yml
+  616  kubectl get all
+  617  kubectl logs pod/myapp-deployment-jboss-557476f79-8j2sg
+  618  kubectl get pods -o wide
+  619  kubectl exec --stdin --tty myapp-deployment-web-6bfdf585b4-478zm -- /bin/bash
+  620  kubectl get pods -o wide
+  621  kubectl exec --stdin --tty myapp-deployment-jboss-557476f79-8j2sg -- /bin/bash
+  622  kubectl get all
+  623  kubectl delete deployment.apps/myapp-deployment-jboss
+  624  kubectl create -f jboss-deployment.yml
+  625  kubectl get pods
+  626  kubectl exec --stdin --tty myapp-deployment-jboss-557476f79-55dp7 -- /bin/bash
+  627  kubectl get pods
+  628  kubectl exec --stdin --tty pod/myapp-deployment-jboss-557476f79-55dp7 -- /bin/bash
+  629  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  630  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  631  ls -ltra
+  632  kubectl get pods
+  633  kubectl logs myapp-deployment-jboss-557476f79-55dp7
+  634  date
+  635  kubectl logs myapp-deployment-jboss-557476f79-55dp7
+  636  cd project/
+  637  ls -ltra
+  638  cd kubernetes/
+  639  ls -ltra
+  640  cd First-Project/
+  641  git pull
+  642  ls -ltra
+  643  cd web-jboss/
+  644  kubectl get all
+  645  kubectl delete deployment.apps/myapp-deployment-jboss
+  646  ls
+  647  cd deployment/
+  648  kubectl create -f jboss-deployment.yml
+  649  kubectl get all
+  650  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  651  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  652  kubectl get all
+  653  kubectl delete deployment.apps/myapp-deployment-jboss
+  654  cd project/kubernetes/First-Project/web-jboss/deployment/
+  655  kubectl create -f jboss-deployment.yml
+  656  kubectl get pods
+  657  kubectl get pods -o wide
+  658  kubectl logs myapp-deployment-jboss-675f8f6486-5msmh
+  659  kubectl get all
+  660  kubectl delete deployment.apps/myapp-deployment-web
+  661  kubectl create -f webserver-deployment.yml
+  662  kubectl get all
+  663  kubectl get pods -o wide
+  664  kubectl logs myapp-deployment-jboss-675f8f6486-5msmh
+  665  kubectl logs service/webserver
+  666  kubectl get pod -o wide
+  667  az account set --subscription ab875324-28d6-4d7b-ae12-e351192675b2
+  668  az aks get-credentials --resource-group Kube_cluster --name kubecluster01
+  669  kubectl get pods
