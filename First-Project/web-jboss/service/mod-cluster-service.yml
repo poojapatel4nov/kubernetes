@@ -8,7 +8,7 @@ metadata:
 spec:
   selector:
       app: myapp
-      type: back-end
+      type: front-end
   ports:
     - port: 7200
       targetPort: 7200
