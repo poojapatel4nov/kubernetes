@@ -8,7 +8,7 @@ metadata:
 spec:
   selector:
       app: test-application
-      type: webserver-pod
+      name: webserver-pod
   ports:
     - port: 7200
       targetPort: 7200
