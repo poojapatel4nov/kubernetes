@@ -1,0 +1,9 @@
+HOSTNAME,CPU MIN,CPU AVG,CPU MAX,CPU CURRENT
+287332-bvos-app1.bvonesource.com,0.39,2.05,14.9,0.58
+287333-bvos-app2.bvonesource.com,0.26,2.32,23.5,0.33
+889925-was1.bvonesource.com,0.42,3.71,22.01,2.34
+889926-was2.bvonesource.com,0.41,2.5,12.88,2.34
+1069313-prod-alf-content1,0.94,24.63,83.35,24.8
+1069315-prod-alf-content2,1.2,8.94,60.82,2.72
+1069312-prod-alf-index1,1.07,26.7,96.99,25.0
+1069314-prod-alf-index2,1.22,8.21,52.11,2.33

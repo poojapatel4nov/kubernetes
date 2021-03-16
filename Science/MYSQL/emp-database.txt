@@ -1,0 +1,41 @@
+MYDQL Queries
+1. create database empdb;
+2. use empdb;
+3. CREATE TABLE employees(emp_no INT NOT NULL, birth_date DATE NOT NULL, first_name VARCHAR(20) NOT NULL, last_name VARCHAR(20) NOT NULL, gender ENUM ('M','F') NOT NULL, hire_date DATE NOT NULL, PRIMARY KEY (emp_no));
+4. show tables;
+5. desc employees;
+6. create table departments(dept_no CHAR(6) NOT NULL, dept_name VARCHAR(40) NOT NULL, PRIMARY KEY(dept_no), UNIQUE KEY(dept_name));
+7. show tables;
+8. desc employees;
+9. CREATE TABLE dept_emp (emp_no INT NOT NULL, dept_no CHAR(4) NOT NULL, from_date DATE NOT NULL, to_date DATE NOT NULL, KEY (emp_no),KEY (dept_no), FOREIGN KEY (emp_no) REFERENCES employees (emp_no) ON DELETE CASCADE, FOREIGN KEY (dept_no) REFERENCES departments (dept_no) ON DELETE CASCADE, PRIMARY KEY (emp_no, dept_no));
+10. CREATE TABLE dept_manager( dept_no CHAR(4) NOT NULL,
+	emp_no INT NOT NULL,
+    from_date DATE NOT NULL,
+    to_date DATE NOT NULL,
+    KEY (emp_no),
+    KEY (dept_no),
+    FOREIGN KEY (emp_no) REFERENCES employees (emp_no) ON DELETE CASCADE,
+    FOREIGN KEY (dept_no) REFERENCES departments (dept_no) ON DELETE CASCADE,
+    primary key (emp_no, dept_no)
+);
+11. create table titles(emp_no INT NOT NULL,
+	title VARCHAR(50) NOT NULL,
+    from_date DATE NOT NULL,
+    to_date DATE,
+    KEY (emp_no),
+    FOREIGN key (emp_no) references employees (emp_no) ON DELETE CASCADE,
+    primary key (emp_no, title, to_date)
+);
+
+12.CREATE TABLE salaries (
+    emp_no      INT    NOT NULL,
+    salary      INT    NOT NULL,
+    from_date   DATE   NOT NULL,
+    to_date     DATE   NOT NULL,
+    KEY         (emp_no),
+    FOREIGN KEY (emp_no) REFERENCES employees (emp_no) ON DELETE CASCADE,
+    PRIMARY KEY (emp_no, from_date)
+);
+
+13. INSERT data in employee table.
+INSERT INTO `empdb`.`employees` (`emp_no`, `birth_date`, `first_name`, `last_name`, `gender`, `hire_date`) VALUES ('2', '1984-11-04', 'Pooja', 'Verma', 'F', '2012-03-12');
